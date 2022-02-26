@@ -6,35 +6,35 @@ output: html_document
 ---
 
 
-```{r echo=FALSE}
+```{r echo=FALSE, warning=FALSE}
 source("../source/analysis.R")
 ```
 
-##Introduction
-This incarcerations dataset provides population counts in prisons broken down by year, county, state, race, and many other features. After reading the background of this data, and knowing previously how the US prison system is a manifestation of modern-day systematic-racism, I wanted to focus on the proportions of different races within the prison system and comparing those percentages to the proportions we see in the general population. Because of this goal, the variables I focused on were mainly the jail population by race, total population by race (between 15 to 64), and total populations of those who are incarcerated. I only focused on race and didn't make any calculations based of gender, although if I were to dive deeper into this set, I would certainly like to learn about the trends concerning different levels of gender proportions in prison and how they may be similar/different to the general population. 
+# Introduction
+  This incarcerations dataset provides population counts in prisons broken down by year, county, state, race, and many other features. After reading the background of this data, and knowing previously how the US prison system is a manifestation of modern-day systematic-racism, I wanted to focus on the proportions of different races within the prison system and comparing those percentages to the proportions we see in the general population. Because of this goal, the variables I focused on were mainly the jail population by race, total population by race (between 15 to 64), and total populations of those who are incarcerated. I only focused on race and didn't make any calculations based of gender, although if I were to dive deeper into this set, I would certainly like to learn about the trends concerning different levels of gender proportions in prison and how they may be similar/different to the general population. 
 
 
-##Summary Information
-As calculated in my analysis.R file, the total incarceration rate in 2018 was 225.3 per 100,000 people, whereas in 1970, it was only 78.8 per 100,000. 2018 has 2.86 times higher of an incarceration rate than in 1970 which is a large amount. I chose to use the ___ incarcerated per 100,000 people because that is how incarceration numbers and other statistics about general population are reported, as opposed to pure percentage because the raw percentage is quite low. I also discovered that in 1970, the county with the most incarcerations was New York County in New York State, which is in the Northeast region, however, more recently in 2018, the county with the most incarcerations is Los Angeles County, California in the West region. Because these values are the *most* incarcerations rather than proportionally, it makes sense that both locations are big populous cities/counties. Then I began finding numbers regarding specific races. I found that in 2018, Black people made up 13.5% of the general population, but more than 33% of the incarcerated population. This difference in proportion is a 2.5x multiple, which is a very large difference. This multiple is 0.77x for white people, which means that the proportion of white people in prison is *lower* than in general population. This is the same for latinx and aapi, with multiples of 0.83 and 0.14 respectively. So, of the races included in this data set, Black people are the only race who's proportion is higher in prison than in the general population. 
+# Summary Information
+  As calculated in my analysis.R file, the total incarceration rate in 2018 was 225.3 per 100,000 people, whereas in 1970, it was only 78.8 per 100,000. 2018 has 2.86 times higher of an incarceration rate than in 1970 which is a large amount. I chose to use the ___ incarcerated per 100,000 people because that is how incarceration numbers and other statistics about general population are reported, as opposed to pure percentage because the raw percentage is quite low. I also discovered that in 1970, the county with the most incarcerations was New York County in New York State, which is in the Northeast region, however, more recently in 2018, the county with the most incarcerations is Los Angeles County, California in the West region. Because these values are the *most* incarcerations rather than proportionally, it makes sense that both locations are big populous cities/counties. Then I began finding numbers regarding specific races. I found that in 2018, Black people made up 13.5% of the general population, but more than 33% of the incarcerated population. This difference in proportion is a 2.5x multiple, which is a very large difference. This multiple is 0.77x for white people, which means that the proportion of white people in prison is *lower* than in general population. This is the same for latinx and aapi, with multiples of 0.83 and 0.14 respectively. So, of the races included in this data set, Black people are the only race who's proportion is higher in prison than in the general population. 
 
 
 
-##Trends Over Time Chart
-```{r , echo=FALSE}
+# Trends Over Time Chart
+```{r , echo=FALSE, warning=FALSE}
 plot(time_plot)
 ```
-This plot shows the incarceration rates per 100,000 people for each race between 1990 and 2018. I excluded 1970-1990 because there was no race-specified data before 1990. The gray line represents the national incarceration rate, and it is very clear that over the entire range of dates, Black people are the highest incarcerated people, while AAPI are the lowest. 
+  This plot shows the incarceration rates per 100,000 people for each race between 1990 and 2018. I excluded 1970-1990 because there was no race-specified data before 1990. The gray line represents the national incarceration rate, and it is very clear that over the entire range of dates, Black people are the highest incarcerated people, while AAPI are the lowest. 
 
 
-##Variable Comparison Chart
-```{r , echo=FALSE}
+# Variable Comparison Chart
+```{r , echo=FALSE, warning=FALSE}
 plot(variable_plot)
 ```
-This graph plots the percent of the total population being black with the percent of prisoners being black. Obviously when the percent of the total population being Black is close to 0, the percent of prisoners being Black is also nearly 0, but the interesting info comes in between the extremes. When the population is 75% Black, there is not a higher proportion of Black people incarcerated, but when the population is 50% Black, they make up about 65% of the prison population. The difference is even higher when Black people are only 25% of the population, where they still account for about 50% of the prison population. It is impossible to say exactly why this is, but one theory is that the higher the percentage of non-Black people in a population, the more the systematic-racism manifests itself.  
+  This graph plots the percent of the total population being black with the percent of prisoners being black. Obviously when the percent of the total population being Black is close to 0, the percent of prisoners being Black is also nearly 0, but the interesting info comes in between the extremes. When the population is 75% Black, there is not a higher proportion of Black people incarcerated, but when the population is 50% Black, they make up about 65% of the prison population. The difference is even higher when Black people are only 25% of the population, where they still account for about 50% of the prison population. It is impossible to say exactly why this is, but one theory is that the higher the percentage of non-Black people in a population, the more the systematic-racism manifests itself.  
 
 
-##Map
+# Map
 ```{r , echo=FALSE}
 WA_black_incar_perc
 ```
-This is a map of Washington where each county is colored differently based on the % of those incarcerated being Black. Counties like King County that are darker purple in color have a higher percentage of Black people incarcerated. This data could be explained because in some counties (like those in Eastern Washington), there may be fewer Black people in the population in general, which translates to a lower Black population in prisons. 
+  This is a map of Washington where each county is colored differently based on the % of those incarcerated being Black. Counties like King County that are darker purple in color have a higher percentage of Black people incarcerated. This data could be explained because in some counties (like those in Eastern Washington), there may be fewer Black people in the population in general, which translates to a lower Black population in prisons. 
